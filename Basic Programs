@@ -147,3 +147,27 @@ text = input("Enter Your Full Name : ")
 first, last = text.split()
 print(last, first)
 
+
+### 8. Technical Questions They May Ask Related to the Data Science Inetrnship Project
+
+What is Machine Learning?
+What is Deep Learning?
+Difference between CNN and LSTM?
+Why LSTM instead of RNN?
+Why PyTorch?
+What is Tensor?
+What is DataLoader?
+What is MinMaxScaler?
+Why MSE instead of MAE for training?
+What is Adam Optimizer?
+What is Gradient Descent?
+What is Backpropagation?
+What is Vanishing Gradient?
+What is Exploding Gradient?
+What is Gradient Clipping?
+What is Early Stopping?
+Why Dropout?
+Why Validation Set?
+Why Train-Test Split?
+What is Time Series Forecasting?
+What is Feature Engineering?

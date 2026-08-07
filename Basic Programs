@@ -107,6 +107,39 @@ for ch in text.lower():
         count += 1
 print(count)
 
+
+### Uniconnect Walk in Interview Question technical round 
+1. HR / Introduction
+Introduce yourself.
+2. Project Discussion
+Tell me about your latest project.
+What is your role in this project?
+3. Python Questions
+Do you know Python?
+Write a program to print the last name first and then the first name.
+
+Example:
+
+Input: Atharva Kewate
+Output: Kewate Atharva
+Explain the logic you used.
+4. Sorting
+Do you know Bubble Sort?
+Explain how Bubble Sort works.
+5. Coding
+Write a Python program to check whether a number is Prime or not.
+Explain your code line by line.
+Why are you starting the loop from 2?
+Why did you use a while loop? (or they may have asked about the loop you used in your solution)
+6. Python Keywords
+What is pass?
+What is break?
+What is continue?
+7. Framework
+Can you write a program using Flask?
+Do you know Flask?
+
+
 # String Coding Question like (Atharva Kewate)First Print Last name then First name outpit will be (Kewate Atharva)
 
 text = input("Enter Your Full Name : ")

@@ -106,3 +106,11 @@ for ch in text.lower():
     if ch in "aeiou":
         count += 1
 print(count)
+
+# String Coding Question like (Atharva Kewate)First Print Last name then First name outpit will be (Kewate Atharva)
+
+text = input("Enter Your Full Name : ")
+
+first, last = text.split()
+print(last, first)
+

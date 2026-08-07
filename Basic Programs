@@ -1,0 +1,108 @@
+# Reverse String
+# 1 approch using slicing
+text = input("Enter a String : ") 
+print("Reversed String : ",text[::-1]) 
+
+# 2 using mordern Charachter
+text = input("Enter a String: ")
+reversed_text = ""
+# Add each character to the FRONT of the new string
+for char in text:
+    reversed_text = char + reversed_text
+print("Reversed String:", reversed_text)
+
+# 3 using for loop
+text = input("Enter a String : ")
+reversed_str = ""
+for i in range(len(text) -1, -1, -1):  # loop -1 length last index (starrting point), -1 ending point (it include 0), -1 loop is in -- or ++
+    reversed_str += text[i]
+print("reversed_str : ", reversed_str) 
+
+
+# Check Palindrome
+
+text = input("Enter a String : ")
+if text == text[::-1]:
+    print("Palindrom")
+else:
+    print("Not Palidrom")
+
+
+# Prime Number
+
+num = int(input("Enter Number : "))
+if num > 1:
+    for i in range(2, num):
+        if num % i == 0:
+            print("Not Prime")
+            break
+        else:
+            print("Prime")
+else:
+    print("Not prime")
+
+
+# Number is Even or Odd
+
+num = int(input("Enter no : "))
+if num % 2 == 0:
+    print("Even")
+else:
+    print("Odd")
+
+
+# Factorical of No
+
+num = int(input("Enter no : "))
+fact = 1
+for i in range(1, num + 1):
+    fact *= i
+print("factorial = ", fact)
+
+
+# Fibonacci Series
+
+num = int(input("Enter no : "))
+a = 0
+b = 1
+for i in range(num):
+    print(a, end=" ")
+    c = a + b
+    a = b
+    b = c
+
+# Armstrong Number is a number that equals the sum of its own digits each raised to the power of the total number of digits. For example, \(153\) is an Armstrong number because it has 3 digits, and \(1^3 + 5^3 + 3^3 = 1 + 125 + 27 = 153\).
+num = int(input("Enter number: "))  # Get input from user and convert it to an integer
+sum = 0                             # Create a variable to hold the running total sum
+temp = num                          # Copy the original number to use in our loop
+
+while temp > 0:                     # Keep looping until all digits are chopped away
+    digit = temp % 10               # Get the last digit of the current number
+    sum = sum + digit ** 3          # Cube the digit and add it to the sum total
+    temp = temp // 10               # Remove the last digit from the number
+
+if num == sum:                      # Check if the final sum matches the original number
+    print("Armstrong Number")       # Print success message if they are exactly equal
+else:                               # Run this block if the numbers do not match
+    print("Not Armstrong Number")   # Print failure message if they are not equal
+
+# Find Largest Number and smaller num
+
+num1 = int(input("Enter number: "))
+num2 = int(input("Enter number: "))
+num3 = int(input("Enter number: "))
+
+largest = max(num1, num2, num3)
+smallest = min(num1, num2, num3)
+
+print("Largest num : ",largest)
+print("Smallest num : ",smallest)
+
+# Count Vowels
+
+text = input("Enter String: ")
+count = 0
+for ch in text.lower():
+    if ch in "aeiou":
+        count += 1
+print(count)

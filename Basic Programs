@@ -98,6 +98,20 @@ smallest = min(num1, num2, num3)
 print("Largest num : ",largest)
 print("Smallest num : ",smallest)
 
+# Print the Secondlargest number from array
+
+# The input array with duplicate largest numbers
+numbers = [12, 35, 1, 10, 34, 35, 1]
+# Remove duplicates using set()
+unique_numbers = list(set(numbers))
+# Sort the array in ascending order
+unique_numbers.sort()
+# Get the second to last element
+second_largest = unique_numbers[-2]
+
+# Print the result
+print("The second largest number is:", second_largest)
+
 # Count Vowels
 
 text = input("Enter String: ")

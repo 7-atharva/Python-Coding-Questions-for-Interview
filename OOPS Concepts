@@ -1,5 +1,5 @@
 # Class: * A class is a collection of data members and member functions which we can access using an object. 
-         * A class is a blueprint of an object, where the class itself does not contain any memory.
+         * A class is a blueprint of an object, where the class itself does not contain any memory, its just an Logical entity.
 #class 
 class Student:
   #def __init__(self): # User Define Constructor using this now we can access same variables multiple time but if we did not spacify this so using defalut built-in python constructor we can only access same variable at one time only not multiple times.

@@ -32,6 +32,7 @@ obj=Student(13, "Ayan" , "1234 Pune")
 * Inheritance means when we define a class that inherits all the properties of other class called inheritance. 
 * Example : New Class created is know as Child class and from which the child class is inherit/created/derived known as Parent class. 
 * So child class can Inherit the Properties of it's Parent class called Inheritance.
+* The Main advantage of Inheritance is it increase code reusability
 """
 class Father():
   def Land(self):  # self is Reffrence parameter which pointing to the Current object.
@@ -53,4 +54,175 @@ There are 5 diffrent types of Inheritance
 4) Hierarchical Inheritnace 
 5) Hybrid Inheritnace 
 """
+# Single Inheritance Where Child class inherit from single parent class, menas there is just one parent class and sigle child class
 
+class Animal():
+  def sound(self):
+    print("Animals can make sound")
+class Dog(Animal):
+  def bark(self):
+    print("Dog's can Bark")
+d = Dog()
+d.sound()
+d.bark()
+
+# Multiple Inheritance Where Child class inherit from more then one parent class. menas there are multiple parent class but there is only single class.
+
+class Animal():
+  def sound(self): #This Self is defalut reffrence parameter which pointing to the current object.
+    print("Animal's can make diffrent sounds")
+
+class Dog():
+  def eat(self):
+    print("Animals can eat")
+
+class Cat(Animal,Dog):
+  def meow(self):
+    print("Cat make sound Meow")
+c = Cat()
+
+c.sound()
+c.eat()
+c.meow()
+
+"""
+Question 1: Reverse a Linked List and Verify It
+
+The Core Concept: To reverse a singly linked list, you iterate through the list and flip the next pointer of each node to point to its previous node instead of its next node.
+
+Python Implementation
+
+python
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+def reverse_linked_list(head: ListNode) -> ListNode:
+    prev = None
+    current = head
+    
+    while current:
+        next_node = current.next  # Save the next node
+        current.next = prev       # Reverse the pointer
+        prev = current            # Move prev forward
+        current = next_node       # Move current forward
+        
+    return prev  # prev becomes the new head
+Use code with caution.
+
+How to Verify the Reversal
+
+Interviews often require you to prove your code works. Use these three verification strategies:
+1. The Double-Reverse Test: If you run the reversed list through your function a second time, it should exactly match the original list structure.
+2. Stack-Based Verification: Push the nodes of the original list onto a stack (LIFO). Pop them one by one to verify they match the sequential order of your newly reversed list.
+3. Edge Case Checks:
+	• Empty list (None): Should return None without crashing.
+	• Single node: Should return the same node immediately.
+
+Question 2: Find Common Elements in Arrays and Square Them
+
+The Core Concept: The most efficient way to find common elements between two arrays is to use a Hash Set. This drops the time complexity from \(O(N \times M)\) down to \(O(N + M)\).
+
+Python Implementation
+
+python
+def common_elements_squared(arr1: list, arr2: list) -> list:
+    # Convert the first array to a set for O(1) lookups
+    set1 = set(arr1)
+    
+    # Use list comprehension to find matches and square them instantly
+    # set(arr2) avoids duplicating results if arr2 has duplicate common numbers
+    return [x**2 for x in set(arr2) if x in set1]
+
+# Example Usage:
+# arr1 = [1, 2, 2, 3, 4]
+# arr2 = [2, 4, 6]
+# Output: [4, 16]  (Squares of 2 and 4)
+Use code with caution.
+
+Complexity Analysis
+
+• Time Complexity: \(O(N + M)\) where \(N\) and \(M\) are the lengths of the two arrays.
+• Space Complexity: \(O(N)\) to store the elements of the first array in the set.
+"""
+
+# Multilevel Inheritance: 
+In MLI, a class is inherited from its parent class, and from that parent class, another child class is inherited. forming a chain of inheritance (Grandparent ➔ Parent ➔ Child).
+
+class Grandparent():
+  def oldgen(self):
+    print("We are your Grandparents")
+
+class Parent(Grandparent):
+  def medgen(self):
+    print("We are your Parents")
+
+class Child(Parent,Grandparent):
+  def newgen(self):
+    print("I am your Child")
+
+c = Child()
+c.oldgen()
+c.medgen()
+c.newgen()
+
+# Hierarchical Inheritance : In Hierarchical Inheritance Multiple child Classes is inherit from single Parent class
+
+class Animal():
+  def sound(self):
+    print("Animals Makes Diffrent sounds")
+
+class Dog(Animal):
+  def bark(self):
+    print("Dong can Bark")
+
+class Cat(Animal):
+  def meow(self):
+    print("Cat can Meow")
+
+class Tiger(Animal):
+  def roar(self):
+    print("Tiger can roar")
+
+d = Dog()
+c = Cat()
+t = Tiger()
+
+d.sound()
+d.bark()
+
+c.sound()
+c.meow()
+
+t.sound()
+t.roar()
+
+# Hybird Inheritance : Hybird Inheritance is a Combination of two or more types of Inheritance. Ex : Single Inheritance and multiple Inheritance
+
+# We will Combine 2 diffrent Inheritance 1st one is Hierarchical Inheritance and 2nd one is Multiple Inheritance
+
+class Animal():
+  def sound(self):
+    print("Animal can make Sound")
+
+class Dog(Animal):
+  def play(self):
+    print("Dogs can Play")
+
+class Cat(Animal):
+  def eat(self):
+    print("Cat can Eat")
+
+class Hourse(Dog, Cat):
+  def run(self):
+    print("Hourse can run")
+
+d = Dog()
+c = Cat()
+h = Hourse()
+
+h.sound()
+h.play()
+h.eat()
+h.run()

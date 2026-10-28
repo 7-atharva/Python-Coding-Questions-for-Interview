@@ -26,3 +26,31 @@ class Student:
 # print(obj.fun.__doc__)
 obj=Student(13, "Ayan" , "1234 Pune")
 
+
+### Inheritance 
+""" 
+* Inheritance means when we define a class that inherits all the properties of other class called inheritance. 
+* Example : New Class created is know as Child class and from which the child class is inherit/created/derived known as Parent class. 
+* So child class can Inherit the Properties of it's Parent class called Inheritance.
+"""
+class Father():
+  def Land(self):  # self is Reffrence parameter which pointing to the Current object.
+    print("father Having 50 hactors Land")
+    
+class Son(Father):
+  def Money(self):
+    print("son Having 10L Money")
+
+s = Son()  # We create an obj of Son class and access the properties of Father class but if we create an obj of Father class and try to access the properties of Son class so we can't access it. 
+s.Land()
+s.Money()
+
+"""
+There are 5 diffrent types of Inheritance
+1) Single Inheritnace 
+2) Multiple Inheritnace 
+3) Multi-Level Inheritnace 
+4) Hierarchical Inheritnace 
+5) Hybrid Inheritnace 
+"""
+https://chatgpt.com/s/m_6ae1a77d4f1081918ceb08af1059b792

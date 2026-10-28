@@ -1,0 +1,28 @@
+# Class: * A class is a collection of data members and member functions which we can access using an object. 
+         * A class is a blueprint of an object, where the class itself does not contain any memory.
+#class 
+class Student:
+  #def __init__(self): # User Define Constructor using this now we can access same variables multiple time but if we did not spacify this so using defalut built-in python constructor we can only access same variable at one time only not multiple times.
+# Self is an default Reffrence parameter which represent to the current objcet in our code that is obj
+    # "Stream Document"   # If we decleared anything kind of this it called an Stream Document. which we can access it using documnet Attribute (print(obj.__doc__)) and there is Condition that it shuld be in top before definaing any variable means before any variable decleration if we define this doc at end or in middel so it will be not accessable
+    age = 10
+    print(age)
+    # def fun(self,age,name,address): # This is function in which its mandotory to add this self reffrence parameter to access the class member function.
+      # "Stream Document"
+      #name = "Ather"
+      #print(name)
+      #print(age," ",name," ",address)
+      # using the Constructor we can also directly print the Values by calling obj
+    def __init__(self,age,name,address):
+      print(age," ", name," ", address)
+      
+# obj = Student()   # This is one way using obj we can directly access it
+# print(obj.age)    # This is Second way uisng Print we can access it
+# print(Student.age) # This is Third way using Class we can access it
+# print(obj.__doc__) # Using this way we can access an stream Document 
+# print(Student.__doc__)  # Using this class also we can access an stream Document 
+# obj.fun()
+#obj.fun(12,"Atharva Kewate", "123 Nagpur")
+# print(obj.fun.__doc__)
+obj=Student(13, "Ayan" , "1234 Pune")
+

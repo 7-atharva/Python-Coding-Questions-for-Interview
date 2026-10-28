@@ -226,3 +226,91 @@ h.sound()
 h.play()
 h.eat()
 h.run()
+
+""" What is Encapsulation?
+**Core Definition:** Encapsulation is the process of binding data members (variables) and member functions (methods) into a single unit, known as a **Class**.
+**Data Hiding:** It restricts direct access to an object's internal components. This prevents external code from accidentally modifying or tampering with the data.
+**Implementation:** In Python, this is achieved by using **access modifiers** (like prefixing a variable name with a single underscore `_` or double underscore `__` to make it private).
+
+• Global Access by Default: Python provides access to all variables (data) and methods globally by default. If we declare any variable or method outside a class, it is called a global variable or global method. This means we can access it within any class or from anywhere in the program.
+• Restricting Access with Encapsulation: By using encapsulation, we can restrict variables and methods from being accessed globally by making them Private or Protected.
+* Python provides access to all the Variables(Data) and Methods Globally means if we decleared any Variable or method outside the class so its called global variable or method so we can access it in any class or access it from any class.
+* So using Encapsulation, we can restrict the variable and method from accessing globally by making it Private or Protected.
+
+
+Here is your text rewritten to fix the grammar and spelling mistakes while maintaining your simple, easy-to-understand tone. It also includes clear, simple explanations and code examples for Private and Protected access modifiers so you can add them straight to your GitHub notes.
+
+1. Corrected Core Explanation
+
+• Global Access by Default: Python provides access to all variables (data) and methods globally by default. If we declare any variable or method outside a class, it is called a global variable or global method. This means we can access it within any class or from anywhere in the program.
+• Restricting Access with Encapsulation: By using encapsulation, we can restrict variables and methods from being accessed globally by making them Private or Protected.
+
+2. Private and Protected (Simple Explanations & How to Access Them)
+
+
+🔒 Private Members (Double Underscore __) Means Variable only access by that class Function. it also does not access by that class Object outside the class.
+
+• What it means: If we declare a variable or method with a double underscore prefix (like __age), it becomes Private. This means it can only be accessed inside that specific class. Where variable is private and Method is public because using that public method we can access the variable of that class only. You cannot access it directly from outside the class using an object.
+
+• How to access it:
+	1. Using Getter/Setter Methods: We create a public function inside the class that returns or changes the private value.
+	2. Using Name Mangling: Python internally renames private variables. You can bypass the restriction from outside the class using the format: _ClassName__variableName.
+Simple Code Example:
+python
+class Student:
+    def __init__(self):
+        self.__name = "Ayan" # Private variable
+
+    # Public method (Getter) to access the private variable safely
+    def get_name(self):
+        return self.__name
+
+obj = Student()
+# print(obj.__name)       # ❌ ERROR! Cannot access directly.
+print(obj.get_name())     #  Correct Way 1: Prints "Ayan"
+print(obj._Student__name) #  Correct Way 2 (Name Mangling): Prints "Ayan"
+Use code with caution.
+
+🛡️ Protected Members (Single Underscore _) Means Variable only accessed by the Class Function and class object.
+
+• What it means: If we declare a variable or method with a single underscore prefix (like _age), it becomes Protected. Technically, this is just a warning/hint to other programmers that this variable should only be accessed inside the same class or its child (sub) classes.
+• How to access it: Python does not actually enforce restrictions on protected members. You can still access them directly outside the class using an object just like a regular variable, but doing so violates standard coding practices.
+Simple Code Example:
+python
+class Parent:
+    def __init__(self):
+        self._address = "123 Pune" # Protected variable
+
+class Child(Parent):
+    def display(self):
+        print(self._address) # Allowed: Accessing in a child class
+
+obj = Child()
+obj.display()      # Prints "123 Pune"
+print(obj._address) #  Works, but not recommended by convention!
+Use code with caution.
+Would you like me to write a similar simple explanation for Abstraction or Inheritance to complete your OOP notes file?
+
+"""
+class A:
+
+    _a = 10    # This is a protected variable. We can access it outside the class by using methods (functions) and the object of that class.
+  
+
+    __b = 20   # This is a private variable. We can access it inside the class only by using methods (functions) with 'self', but we cannot access it outside that class using an object.
+
+    def show(self):
+        print("a = ", self._a)
+        print("b = ", self.__b)
+
+# Outside the class: Accessing variables and methods using an object
+obj = A() # Created an Object of the class
+
+obj.show() # Using this, we access both private and protected data because the function is inside the class.
+# But outside the class, we cannot access private variables directly using the object (you will see in the next lines why).
+
+print("Outside Class : ", obj._a) # We can access the protected variable outside the class using the object
+
+print("Outside Class : ", obj.__b) # ❌ but This will throw an Attribute error! becuase We cannot access the private variable outside the class using the object.
+
+

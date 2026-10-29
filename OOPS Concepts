@@ -357,7 +357,7 @@ print(len(["Atharva","Kewate"])) # Now this same print fnction will give the len
 
 """
 What is Mehtod OverLoading ?
-* Method Overloading means whenever clsas contains more then one method with same name but having diffrent parameter then it is called as Method Overloading
+* Method Overloading means whenever clsas contains more then one method with same name but having diffrent parameter then it is called as Method Overloading.
 
 """
 class A():
@@ -373,6 +373,23 @@ obj.show()
 obj.show("Atharva")
 obj.show("Atharva","Kewate")
 
+"""
+What is Mehtod Overriding ?
+* Method Overriding means whenever a child class contains a method with the same name and same parameters as a method in its parent class, then it is called as Method Overriding.
+* Inheritance is Compulsory while performing the overriding.becuase we are using the parent and child class.
+* In this Object will be same for both class but its Behaviour will be diffrent
+
+"""
+class A():
+  def display(self):
+    print("This is Parent Class")
+class B(A):
+  def display(self):
+    # We use the super() keyword here to run the Parent class method first. 
+    super().display()  # Without super(), the child object will only run the child method because it gives priority to itself.    # So, super() helps us bring the Parent class logic into our overridden method.   # So to override it we use super keyword to access an Parent class.
+        super().display()  
+    print("This is Child Class")
+obj = B()
 
 
 

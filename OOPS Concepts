@@ -142,7 +142,6 @@ def common_elements_squared(arr1: list, arr2: list) -> list:
 Use code with caution.
 
 Complexity Analysis
-
 • Time Complexity: \(O(N + M)\) where \(N\) and \(M\) are the lengths of the two arrays.
 • Space Complexity: \(O(N)\) to store the elements of the first array in the set.
 """
@@ -241,12 +240,10 @@ h.run()
 Here is your text rewritten to fix the grammar and spelling mistakes while maintaining your simple, easy-to-understand tone. It also includes clear, simple explanations and code examples for Private and Protected access modifiers so you can add them straight to your GitHub notes.
 
 1. Corrected Core Explanation
-
 • Global Access by Default: Python provides access to all variables (data) and methods globally by default. If we declare any variable or method outside a class, it is called a global variable or global method. This means we can access it within any class or from anywhere in the program.
 • Restricting Access with Encapsulation: By using encapsulation, we can restrict variables and methods from being accessed globally by making them Private or Protected.
 
 2. Private and Protected (Simple Explanations & How to Access Them)
-
 
 🔒 Private Members (Double Underscore __) Means Variable only access by that class Function. it also does not access by that class Object outside the class.
 
@@ -293,10 +290,8 @@ Would you like me to write a similar simple explanation for Abstraction or Inher
 
 """
 class A:
-
     _a = 10    # This is a protected variable. We can access it outside the class by using methods (functions) and the object of that class.
   
-
     __b = 20   # This is a private variable. We can access it inside the class only by using methods (functions) with 'self', but we cannot access it outside that class using an object.
 
     def show(self):
@@ -310,7 +305,36 @@ obj.show() # Using this, we access both private and protected data because the f
 # But outside the class, we cannot access private variables directly using the object (you will see in the next lines why).
 
 print("Outside Class : ", obj._a) # We can access the protected variable outside the class using the object
-
 print("Outside Class : ", obj.__b) # ❌ but This will throw an Attribute error! becuase We cannot access the private variable outside the class using the object.
 
 
+"""
+* Abstraction is process of hidding the implementation detailes of class and exposing only the neccessary information to users.
+* Ex : we recived call so we have two option Green(recive) or Red(Reject) so they just provide an servise we can't see the background implementaion of internal coding which is hide in backend.
+* Abstarction can be achive using two diffrent ways 
+1) Abstract class and Method
+2) Interface
+"""
+first.py # In this file we will add the logic of Addition Service so user an access it 
+
+def add():
+  a = int(input("Enter First Number : "))
+  b = int(input("Enter Second Number : "))
+
+  sum = a+b
+  print("Addistion two Numbers is : ",sum)
+  
+second.py # In this file we will add the logic of Subtraction Service so user an access it
+def sub():
+  a = int(input("Enter First Number : "))
+  b = int(input("Enter Second Number : "))
+
+  sum = a-b
+  print("Subtraction of two Numbers is : ",sum)
+
+Main.py # using this we can Access the functionality of two created Files
+import first,second
+# Now in this Main File we have to just access those file using import that created file
+
+first.add() # so user can access this serives but they dont no that from which file this is comming or which logic is implemented in that file. This part is hidden from user and this is called Abstraction
+second.sub()

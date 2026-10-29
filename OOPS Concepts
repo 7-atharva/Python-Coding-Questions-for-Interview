@@ -338,3 +338,41 @@ import first,second
 
 first.add() # so user can access this serives but they dont no that from which file this is comming or which logic is implemented in that file. This part is hidden from user and this is called Abstraction
 second.sub()
+
+
+"""
+* Polymorphism means ability to perform more thean one task(form) (means same object can perform multiple tasks) called Polymorphism.
+* Polymorphism Derived from the Greek words poly means (many) and morph means (form), it means "many forms.
+* Example any person can perform diffrent task like if an person go to the college so he is now as student then if that person go to shooping then he is Customer then that person go to the Home then he plays a role of Son or Father or Husband.
+
+* Polymorphism can be Implemented using two diffrent ways 
+1) Overloading
+2) Overriding
+
+"""
+# As in this situation using same print function we can perform two diffrent task emans same function perform two diffrent tasks
+print(len("Atharva")) # This print function give the length of the String as 7
+
+print(len(["Atharva","Kewate"])) # Now this same print fnction will give the length of list previously they are counting string charachter now they are count the list elements
+
+"""
+What is Mehtod OverLoading ?
+* Method Overloading means whenever clsas contains more then one method with same name but having diffrent parameter then it is called as Method Overloading
+
+"""
+class A():
+  def show(self):
+    print("Welcome")
+  def show(self,firstname=''):
+    print("Welcome",firstname)
+  def show(self,firstname=" ",lastname=" "):
+    print("Welcome",firstname,lastname)
+
+obj = A()
+obj.show()
+obj.show("Atharva")
+obj.show("Atharva","Kewate")
+
+
+
+

@@ -391,5 +391,124 @@ class B(A):
     print("This is Child Class")
 obj = B()
 
+"""
+What is List in Python
+
+* List is data Structure which is also called as Collection of items, in which we can store anything like String, Float,Integer... values. 
+* Means in single list we can store diffrent types of data type values like (String, Int, Float...)
+* And List is Called as Data Structure because we can perform multiple operations on it like Insertion, Deletion, updation.
+* We Decleared list using an Square bracket [] in that we stores n of items and each items seperated by comma ',' items also called as elements.
+* In list Duplicatees values are Allow. we can store duplicate values in list.
+* List is Mutable means we can do Changes in list (like delete,update) once the list is created.
+* Syntax : List_name = [item1, item2, item3...]
+"""
+
+# list1 = [] # We created an empty list
+# print(type(list1)) # Using type() function we  see the data type or which type the list1 have.
+
+# list2 = list() # we can also create an List using list() function
+# print(type(list2))
+
+list3 = [10, 'String', 7.7, True, 77, 'String']  # We can store diffrent types of data type in single list.
+# Now using the concept of Indexing we can access an items by there index positio. Note : Index start from 0 in list 
+print(list3[1]) 
+
+# Concept of Slicing
+# Slicing means breaking or cutting the list to get a specific part of it. 
+# Whenever we want to access multiple items between any two positions, we use Slicing.
+# Syntax: list_name[start_index : stop_index]
+# Note: The stop_index item is excluded (not included in the result) means last index will be -1 not till that last result if i say [1:4] so it will print 1,2,3 does not print 4 because it goes to -1.
+
+print(list3[1:4]) # This will slice the list from index 1 to index 3 and give the output.
+
+# List Methods
+# 1. Counting a particular item using the count() method
+# We can count how many times a specific item appears in the list using the .count() method.
+print(list3.count("String"))
+
+# 2. Finding the position of an item using the index() method
+# We can find the index position (location number) of a specific item in the list using the .index() method.
+# Note: If the item appears multiple times, it will only give the index of the first time it appears.
+
+list3 = [10, 'String', 7.7, True, 77,10]
+print(list3.index(77)) # This will look for 77 in the list and return its index position. Output: 4
+
+# 3. Finding the index of a duplicate item by changing the starting point
+# If an item appears multiple times, the normal .index() only looks from the beginning (index 0).
+# But by adding a second number inside index(item, start_position), we tell Python to skip the first parts and start searching from that specific index position onwards.
+
+print(list3.index(10, 1)) # This will look for the number 10, but it will start searching from index position 1 instead of 0. Output: 5
+
+# 4. Inserting an item at a specific position using the insert() method
+# We can add an item at any specific index position using insert(index, value). 
+# It shifts the other items to the right side without deleting them.
+list3.insert(2, "Atharva") 
+print(list3)
+
+# 5. Deleting an item using the pop() method
+# We can remove an item from a specific index position using pop(index). It also returns the deleted item.
+list3.pop(2)
+print(list3)
+
+# Note: If we do not provide any index position inside pop(), it will delete the last item of the list by default.
+list3.pop()
+print(list3)
+
+# 6. Joining two lists together using the extend() method
+# Whenever we want to add multiple items from another list to our current list, we use the extend() method.
+# By default, it appends all the new items to the very end of the list.
+list4 = [10, "Atharva", "Kewate"]
+list3.extend(list4)
+print("Added items from list4 to list3: ", list3)
+
+# 7. Copying a list using the copy() method
+# The copy() method is used to create an exact duplicate clone of a list and save it into a new variable.
+list4 = list3.copy()
+print("New Copy List from list3: ", list4)
+
+# 8. Copying a list using the Slicing Concept
+# This is another way to clone a list without using the copy() method. 
+# By using list3[:], it copies items from the starting index 0 all the way to the last index.
+list4 = list3[:] 
+print("New Copy List using Slicing: ", list4)
+
+# 9. Arranging items using the sort() method
+# Note: We can sort a list containing similar types of elements in ascending or descending order.
+# By default, .sort() arranges numbers from smallest to largest.
+my_list = [12, 40, 20, 30, 77, 45]
+my_list.sort()
+print(my_list)
+
+# Note: If we want to sort the elements in Descending order (largest to smallest), we pass reverse=True inside sort().
+my_list.sort(reverse=True)
+print(my_list)
+
+# 10. Flipping a list upside down using the reverse() method
+# The reverse() method directly flips the order of the items in the list from right to left, without sorting them.
+my_list = [12, 40, 20, 30, 77, 45]
+my_list.reverse()
+print(my_list)
+
+# 11. Creating a Nested List (List inside another List)
+# A nested list simply means a list within a list. We can go multiple layers deep by nesting lists inside other lists.
+list5 = [10, "Atharva", "Kewate", [7.7, "String", [20, 45]]]
+print(list5)
+
+# 12. Filtering items easily using List Comprehension
+# List comprehension is a short and elegant way to create a new list from an existing list based on conditions.
+# For example, here we filter and print names that match specific starting letters.
+list6 = ["Atharva", "Ekansh", "Pranvi", "Pawan", "Kalyani", "Khushi", "Anushka"]
+a = [word for word in list6 if word.startswith("A")]
+print(a)
+a = [word for word in list6 if word.startswith("Ath")]
+print(a)
+
+# 13. Extracting items using List Unpacking
+# Unpacking means dividing the items of a list separately and assigning them directly to individual variables.
+list7 = ["Atharva", "Kewate"]
+n1, n2 = list7
+print(n1) # Now variable n1 gets the value "Atharva"
+print(n2) # Now variable n2 gets the value "Kewate"
+
 
 

@@ -269,7 +269,20 @@ print(myset1 - myset2)
 # Meaning: It combines elements that are ONLY in Set 1 and ONLY in Set 2 (removes what they share).
 print(myset1.symmetric_difference(myset2))
 
+"""
+What is a Dictionary in Python
 
+• A Dictionary is a data structure which is also called as collection of items, it stores data in Key-Value pairs.
+• This means duplicate Keys are NOT allowed in a dictionary, but duplicate Values are allowed. If you try to add the same key twice, Python will automatically overwrite the old value with the new one.
+• A dictionary is Ordered, which means the items keep a fixed insertion position. Every time you print a dictionary, the items will always appear in the exact same order you added them.
+• Because it works on key-value pairs, you cannot use numeric Indexing or Slicing to access items in a dictionary (like my_dict[0] will give an error unless 0 is explicitly created as a key). Instead, we access values by calling their unique key name.
+• We declare a dictionary using curly brackets {}, where each key is mapped to its value using a colon :, and each key-value pair is separated by a comma ,.
+• Heterogeneous elements are Allowed in a dictionary. (Heterogeneous means different types of Data types like int, string, float, list, or boolean can be stored as keys or values in a Dictionary).
+• Dictionary is Mutable.
+• Key must be Unique, but dublicates value are allowed
+• Syntax: Dict_name = {key1: value1, key2: value2, key3: value3...}
+
+"""
 
 
 

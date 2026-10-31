@@ -189,7 +189,85 @@ What is a Set in Python
 * Hetrogenous elements are Allowed in set. (Hetrogenous means diffrent types of Data types like int,string,flot can store in Set)
 * Set is
 * Syntax: `Set_name = {item1, item2, item3...}`
+* Set is Mutable.
 """
+myset = {12, 45, 67, 'Ather', 7.7}
+myset1 = set()  # We can also create an empty set using the set() function.
+myset2 = {}     # If we declare an empty set using just {} without any items, it will be considered a Dictionary.
+
+print(type(myset))
+print(type(myset1))
+print(type(myset2))
+
+# In a Set, Indexing is not allowed because a Set is unordered. 
+# Every time we run the code, we might get a different order of items.
+# print(myset[1])  # ❌ This will throw an error because we can't access items using index positions.
+
+# Because sets are unordered, we also cannot perform slicing operations. 
+# Also, duplicate values are automatically removed.
+myset = {12, 45, 67, 'Ather', 'Ather', 7.7}
+print(myset)
+
+# 1. add() method
+myset.add("Kewate") 
+# myset.add("Kewate", 10) # ❌ ERROR: Using add(), we can only add one item at a time. We can't add multiple items.
+print(myset)
+
+# 2. update() method
+# myset.update("Learn")  # ❌ Note: If we add a string like this without square brackets [], Python will split it and add each character individually.
+# Example result: {67, 'n', 7.7, 12, 'Ather', 'r', 'e', 45, 'a', 'Kewate', 'L'}
+
+myset.update(["Learn"])  # By putting it inside brackets ["Learn"], it adds the full single string. We can also add multiple items at a time here.
+print(myset)
+
+# 3. pop() method for deleting items
+print(myset.pop()) # Since a set is unordered, pop() will delete and return an item from the set (often looks like the first or a random item because there is no fixed 'last' item).
+print(myset)
+
+# 4. remove() method to delete a specific item
+# Note: The key difference between pop() and remove() is that pop() removes an item based on set order, but remove() lets us specify exactly which element we want to delete.
+myset.remove(45)
+print(myset)
+
+# 5. clear() method
+# We use this to delete all the items inside the set and return an empty set.
+myset.clear()
+print(myset)
+
+# --- We can perform Mathematical Operations on Sets ---
+
+myset1 = {12, 45, 67, 'Ather', 7.7}
+myset2 = {10, 67, 'Ather', 'Kewate', 34}
+print("Set 1 : ", myset1)
+print("Set 2 : ", myset2)
+
+# 6. union() method
+# It combines and prints all unique items from both sets, automatically removing any duplicates.
+print("After union Final Set : ", myset1.union(myset2))
+
+# Another way to perform Union is using the '|' operator, which does the exact same thing.
+print(myset1 | myset2)
+
+# 7. intersection() method
+# It prints only the common values that are present in BOTH sets.
+print(myset1.intersection(myset2))
+
+# Another way to perform Intersection is using the '&' operator.
+print(myset1 & myset2)
+
+# 8. difference() method (Detailed Explanation)
+# It prints the items that are purely unique to Set 1 and NOT present in Set 2. 
+# Meaning: (Items of Set 1) minus (Common elements of both sets).
+# Example: Here, 67 and 'Ather' are common, so they are removed. Only 12, 45, and 7.7 are left from Set 1.
+print(myset1.difference(myset2))
+
+# Another way to perform Difference is using the minus '-' operator.
+print(myset1 - myset2)
+
+# 9. symmetric_difference() method
+# It prints the unique items from both sets EXCEPT their common items. 
+# Meaning: It combines elements that are ONLY in Set 1 and ONLY in Set 2 (removes what they share).
+print(myset1.symmetric_difference(myset2))
 
 
 

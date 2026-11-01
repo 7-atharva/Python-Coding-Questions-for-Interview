@@ -281,12 +281,72 @@ What is a Dictionary in Python
 • Dictionary is Mutable.
 • Key must be Unique, but dublicates value are allowed
 • Syntax: Dict_name = {key1: value1, key2: value2, key3: value3...}
+• Key must be unique, but duplicates value are Allowed
 
 """
+# 1. Creating an Empty Dictionary
+dic = {}        # Creating an empty dictionary using curly brackets {}.
+dic1 = dict()   # We can also create an empty dictionary using the built-in dict() function.
+print(type(dic1))
 
+# 2. Key Uniqueness vs Duplicate Values
+# In a dictionary, values can be duplicates, but keys MUST be unique. They should not be repeated.
+dic = {"Name": "Atharva", "age": 23, "Username": "Atharva"} 
+print(dic)
 
+# 3. Handling Duplicate Keys (Overwriting)
+# If we try to use the same key name multiple times, Python will not print the old value. 
+# Instead, it overwrites the old data and keeps the latest updated value for that key.
+dic = {"Name": "Atharva", "age": 23, "Name": "Ather"} 
+print(dic)
 
+# 4. Accessing a Value directly using a Key
+# We can easily fetch any specific value from the dictionary by passing its unique key name inside square brackets.
+print(dic["Name"]) 
 
+dic = {"Name": "Atharva", "age": 23, "user": "Ather", "password": 12345}
+print(dic)
 
+# 5. Deleting a key-value pair using the pop() method
+# By passing the key name inside pop(), it deletes that specific key-value pair. 
+# Wrapping it inside a print() statement allows us to see exactly which value was removed.
+print(dic.pop("password")) 
 
+# 6. Accessing values safely using the get() method
+# We can access a value using the get() method by passing its key name.
+print(dic.get("user"))
+
+# Note: If we look for a key that does not exist, get() prevents a crash and returns 'None' by default. 
+# We can also provide a customized fallback message as a second argument to print if the key is missing.
+print(dic.get("users", "Not found this Key")) 
+
+# 7. Clearing a dictionary using the clear() method
+# The clear() method completely deletes all the key-value pairs from the dictionary, leaving it empty.
+dic.clear()
+print(dic)
+
+# 8. Fetching all keys using the keys() method
+# Using the .keys() method, we can view a list-like collection of all the key names present in the dictionary.
+dic = {"Name": "Atharva", "age": 23, "user": "Ather", "password": 12345}
+print(dic.keys())
+
+# 9. Fetching all values using the values() method
+# Using the .values() method, we can view a collection of all the data values stored inside the dictionary.
+print(dic.values())
+
+# 10. Fetching pairs using the items() method
+# The .items() method returns a collection containing each key-value pair grouped together as a tuple.
+print(dic.items())
+
+# 11. Looping through a dictionary using items()
+# We can use a 'for' loop with the .items() method to extract and print keys and values simultaneously.
+# Note: Using the 'sep=" - "' parameter inside print() adds a clean dash separator symbol between each key and value output.
+for key, values in dic.items():
+    print(key, values, sep=" - ") 
+
+# 12. Updating values dynamically
+# We can manually update the value of an existing key at any time by assigning a new value to it. 
+# For example, here we update the age value from 23 to 25.
+dic["age"] = 25
+print(dic)
 

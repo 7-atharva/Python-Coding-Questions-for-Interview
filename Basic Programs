@@ -137,13 +137,13 @@ Example:
 Input: Atharva Kewate
 Output: Kewate Atharva
 Explain the logic you used.
+
 name = "Atharva Kewate"
 reverse = name.split()
 # print(reverse[::-1])
 # this will print the output in this way ['Kewate', 'Atharva'] but if there is some conditions like they need this clear output they dont need in the list type[ , ] So this approch will not pass the test cases they need this answer Kewate Atharva so for that use this join() means it work like glue means write i single string with " any symbol" Ex join(" ") means it will add an space between two string like we can also use this join(",")...
 
-word = reverse[::-1]
-print(" ".join(word)) # this approch will pass all the required test cases output for this otput is Kewate Atharva
+print(" ".join(reverse[::-1])) # this approch will pass all the required test cases output for this otput is Kewate Atharva
 
 4. Sorting
 Do you know Bubble Sort?

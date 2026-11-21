@@ -1,0 +1,17 @@
+# Identifier in Python
+# An identifier is nothing but a name given to elements in a Python program. 
+# It can be a class name, variable name, function name, or module name.
+
+# 1. Variable Identifier
+a = 10    # Example: Here, the value 10 is given the identifier name 'a'.
+print(a)
+
+# 2. Class and Function (Method) Identifiers
+class A:  # Here, 'A' is the identifier (name) of the class.
+    def m1(self):  # Here, 'm1' is the identifier (name) of the method/function.
+        print("Atharva")
+        print("Kewate")
+
+# 3. Object Identifier
+obj = A() # Here, 'obj' is the identifier (name) of the object created from class A.
+obj.m1()

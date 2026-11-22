@@ -44,7 +44,7 @@ Operators in Python
    - (or): Returns True if AT LEAST ONE condition is True.
    - (not): Reverses the result (turns True into False, and False into True).
 
-4) Bitwise Operators (&, |, ^, ~, <<, >>)
+4) Bitwise Operators (&, |, ^, ~, <<, >>)  (Bitwise Operators only perform on int and boolean values)
    - Used to perform operations directly on binary numbers (0s and 1s) bit by bit.
    - (&) Bitwise AND: Sets each bit to 1 if both bits are 1.
    - (|) Bitwise OR: Sets each bit to 1 if at least one of the two bits is 1.

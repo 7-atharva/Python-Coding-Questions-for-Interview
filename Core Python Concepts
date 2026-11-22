@@ -15,3 +15,102 @@ class A:  # Here, 'A' is the identifier (name) of the class.
 # 3. Object Identifier
 obj = A() # Here, 'obj' is the identifier (name) of the object created from class A.
 obj.m1()
+
+"""
+Operators in Python
+* Operators are nothing but special symbols that perform a certain task or calculation on values (operands).
+* There are different types of Operators in Python:
+
+1) Arithmetic Operators (+, -, *, /, //, %, **)
+   - Used to perform basic mathematical calculations like addition, subtraction, multiplication, and division.
+   - (+) Addition: Adds two values (e.g., 5 + 2 = 7)
+   - (-) Subtraction: Subtracts right value from left (e.g., 5 - 2 = 3)
+   - (*) Multiplication: Multiplies two values (e.g., 5 * 2 = 10)
+   - (/) Division: Divides left value by right and always gives a float/decimal answer (e.g., 5 / 2 = 2.5)
+   - (//) Floor Division: Divides and removes the decimal part, giving only the whole integer (e.g., 5 // 2 = 2)
+   - (%) Modulus: Divides and returns only the remainder (e.g., 5 % 2 = 1)
+   - (**) Exponent/Power: Calculates the power of a number (e.g., 5 ** 2 = 25)
+
+2) Relational / Comparison Operators (<, >, <=, >=, ==, !=)
+   - Used to compare two values. It always returns either True or False.
+   - (<) Less than, (>) Greater than
+   - (<=) Less than or equal to, (>=) Greater than or equal to
+   - (==) Equal to: Checks if both values are the exact same
+   - (!=) Not equal to: Checks if both values are different
+
+3) Logical Operators (and, or, not)
+   - Used to combine multiple conditions together.
+   - (and): Returns True only if BOTH conditions are True.
+   - (or): Returns True if AT LEAST ONE condition is True.
+   - (not): Reverses the result (turns True into False, and False into True).
+
+4) Bitwise Operators (&, |, ^, ~, <<, >>)
+   - Used to perform operations directly on binary numbers (0s and 1s) bit by bit.
+   - (&) Bitwise AND: Sets each bit to 1 if both bits are 1.
+   - (|) Bitwise OR: Sets each bit to 1 if at least one of the two bits is 1.
+   - (^) Bitwise XOR: Sets each bit to 1 if only one of the two bits is 1.
+   - (~) Bitwise NOT: Inverts all the bits (flips 0 to 1 and 1 to 0).
+   - (<<) Left Shift: Shifts bits to the left by pushing zeros in from the right.
+   - (>>) Right Shift: Shifts bits to the right.
+
+5) Assignment Operators (=, +=, -=, *=, /=)
+   - Used to assign and update values inside variables (e.g., a += 5 means a = a + 5).
+
+6) Membership Operators (in, not in)
+   - Used to check if a value is present inside a sequence like a list, string, or tuple (returns True or False).
+
+7) Identity Operators (is, is not)
+   - Used to check if two variables point to the exact same object in memory.
+"""
+# Simple Continuous Calculator using Functions and a While Loop
+# Defining a function using the 'def' keyword so we can reuse our calculator anytime
+def calculator():
+    # Using 'while True' creates an infinite loop that keeps asking the user repeatedly
+    while True:
+        print("\n--- Simple Calculator ---")
+        # Asking the user to select an operation first, or type 'exit' to stop
+        select = input("Select Operation [+, -, *, /, //, %, **] or type 'exit' to quit: ")
+        # Checking if the user wants to exit
+        # Note: .lower() ensures it works even if the user types 'EXIT' or 'Exit'
+        if select.lower() == "exit":
+            print("Exiting Calculator. Thank you!")
+            break  # The 'break' keyword immediately stops the loop and exits the function
+        # Checking if the user entered a valid operator before asking for numbers
+        if select in ["+", "-", "*", "/", "//", "%", "**"]:
+            num1 = int(input("Enter num 1 : "))
+            num2 = int(input("Enter num 2 : "))
+
+            if select == "+":
+                print("Addition is : ", num1 + num2)
+
+            elif select == "-":
+                print("Subtraction is : ", num1 - num2)
+
+            elif select == "*":
+                print("Multiplication is : ", num1 * num2)
+
+            elif select == "/":
+                if num2 != 0:
+                    print("Division is : ", num1 / num2)
+                else:
+                    print("Error: Cannot divide by zero!")
+
+            elif select == "//":
+                if num2 != 0:
+                    print("Floor Division is : ", num1 // num2)
+                else:
+                    print("Error: Cannot divide by zero!")
+
+            elif select == "%":
+                if num2 != 0:
+                    print("Modulus (Remainder) is : ", num1 % num2)
+                else:
+                    print("Error: Cannot divide by zero!")
+
+            elif select == "**":
+                print("Power (Exponent) is : ", num1 ** num2)
+        else:
+            # If the user types anything other than a valid operator or 'exit'
+            print("Invalid Choice! Please select a valid operator or type 'exit'.")
+# Calling the function to start the calculator
+calculator()

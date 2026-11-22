@@ -114,3 +114,39 @@ def calculator():
             print("Invalid Choice! Please select a valid operator or type 'exit'.")
 # Calling the function to start the calculator
 calculator()
+
+# Bitwise Operators in Python
+# Bitwise operators convert decimal numbers into binary (0s and 1s) and perform operations bit by bit.
+
+a = 5  # In binary: 0101
+b = 3  # In binary: 0011
+
+# 1. Bitwise AND (&)
+# Rule: Returns 1 only if BOTH bits are 1; otherwise returns 0.
+# 0101 & 0011 = 0001 (which is 1 in decimal)
+print("Bitwise AND (a & b) :", a & b)
+
+# 2. Bitwise OR (|)
+# Rule: Returns 1 if AT LEAST ONE of the two bits is 1; otherwise returns 0.
+# 0101 | 0011 = 0111 (which is 7 in decimal)
+print("Bitwise OR (a | b)  :", a | b)
+
+# 3. Bitwise XOR (^)
+# Rule: Returns 1 only if BOTH bits are DIFFERENT (one is 1 and one is 0). If same, returns 0.
+# 0101 ^ 0011 = 0110 (which is 6 in decimal)
+print("Bitwise XOR (a ^ b) :", a ^ b)
+
+# 4. Bitwise NOT (~)
+# Rule: Flips all the bits (turns 0 into 1, and 1 into 0). 
+# In Python, it follows the simple formula: -(a + 1)
+print("Bitwise NOT (~a)    :", ~a)
+
+# 5. Bitwise Left Shift (<<)
+# Rule: Shifts the bits to the left by the given number of steps and adds 0s on the right.
+# 0101 shifted left by 1 step becomes 1010 (which is 10 in decimal)
+print("Left Shift (a << 1) :", a << 1)
+
+# 6. Bitwise Right Shift (>>)
+# Rule: Shifts the bits to the right by the given number of steps and removes bits from the right.
+# 0101 shifted right by 1 step becomes 0010 (which is 2 in decimal)
+print("Right Shift (a >> 1):", a >> 1)

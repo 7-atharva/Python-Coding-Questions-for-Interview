@@ -56,11 +56,38 @@ Operators in Python
 5) Assignment Operators (=, +=, -=, *=, /=)
    - Used to assign and update values inside variables (e.g., a += 5 means a = a + 5).
 
-6) Membership Operators (in, not in)
-   - Used to check if a value is present inside a sequence like a list, string, or tuple (returns True or False).
+6). Membership Operators (in, not in)
+# Used to check if a value is present inside a sequence (like a list, string, or tuple). It returns True or False.
+
+my_list = ["Atharva", "Kewate", 10, 7.7]
+
+# 'in' operator: Returns True if the item is found in the list
+print("Is 'Atharva' in list?     :", "Atharva" in my_list)      # True
+print("Is 'Python' in list?      :", "Python" in my_list)       # False
+
+# 'not in' operator: Returns True if the item is NOT found in the list
+print("Is 50 not in list?        :", 50 not in my_list)          # True
+print("Is 10 not in list?        :", 10 not in my_list)          # False
+
+# Note: It also works on Strings to check for letters or words
+name = "Atharva"
+print("Is 'Ath' in name?         :", "Ath" in name)              # True
+
 
 7) Identity Operators (is, is not)
-   - Used to check if two variables point to the exact same object in memory.
+# Used to check if two variables point to the exact same object (memory location), NOT just if they have the same value.
+
+list1 = [1, 2, 3]
+list2 = [1, 2, 3]
+list3 = list1  # Here, list3 points to the exact same memory location as list1
+
+# 'is' operator: Returns True if both variables share the same memory location
+print("list1 is list3?           :", list1 is list3)             # True (Same object in memory)
+print("list1 is list2?           :", list1 is list2)             # False (Different objects in memory, even though values match)
+
+# 'is not' operator: Returns True if both variables are stored at different memory locations
+print("list1 is not list2?       :", list1 is not list2)         # True
+print("list1 is not list3?       :", list1 is not list3)         # False
 """
 # Simple Continuous Calculator using Functions and a While Loop
 # Defining a function using the 'def' keyword so we can reuse our calculator anytime
